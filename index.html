@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Помощь котам — Главная</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Помощь котам</h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="help.html">Как помочь</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="fade-in">
+      <h2>Мы рядом, когда мяукают о помощи</h2>
+      <p>
+        Каждый день на улицах остаются коты без еды, тепла и любви. Мы — команда, которая делает всё возможное, чтобы изменить их судьбу.
+        Вместе с тобой мы можем подарить им жизнь, где есть крыша над головой и забота.
+      </p>
+      <p>
+        Наша цель — не просто накормить. Мы лечим, ищем дома, обучаем, как помогать правильно. Добро начинается с одного действия. Сделай его.
+      </p>
+    </section>
+    <section class="fade-in">
+        <h2>Наши Хвостики</h2>
+        <div class="cats-gallery">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR58EJe_erkl_CHKxeTjjZIn_r_B5gLLRN65A&s" alt="Кот 1">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3d3TmhV1fvM3GwPC-UPKhfaTURJB2MAReqbl5-9uknOZfLF5ryO7lA4Xh5ArjotfJLNY&usqp=CAU" alt="Кот 2">
+          <img src="https://img.freepik.com/premium-photo/tip-red-cat-s-tail-yellow-background-part-red-cat-rear-view_116815-778.jpg" alt="Кот 3">
+          <img src="https://ornella.club/uploads/posts/2023-05/26674/thumbs/1684785364_ornella-club-p-koshachii-khvost-pinterest-29.jpg" alt="Кот 4">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbKyRdbM4eFPkPQpq04soKcXHU6vNNXTdVDzYBsKkv_KXnLXuV9A1eehKb-nT3p_lgQDs&usqp=CAU" alt="Кот 5">
+        </div>
+        <p class="thanks-text">Благодарим новых хозяев котиков за фото!</p>
+      </section>      
+    <section class="fade-in">
+      <h2>Пожертвовать</h2>
+      <form class="donation-form">
+        <label for="card">Номер вашей карты:</label>
+        <input type="text" id="card" placeholder="0000 0000 0000 0000">
+
+        <label for="amount">Сумма (₽):</label>
+        <input type="number" id="amount" placeholder="500">
+
+        <button type="submit">Подтвердить</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Помощь котам</p>
+  </footer>
+
+  <button id="toTop" title="Вернуться вверх">Наверх</button>
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      toTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

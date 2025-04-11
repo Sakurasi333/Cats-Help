@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>О нас — Помощь котам</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Помощь котам</h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="help.html">Как помочь</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="fade-in">
+      <h2>Кто мы такие</h2>
+      <p>
+        Мы — те, кто верит, что даже один спасённый кот может изменить мир. Мы не государственная организация, не крупный фонд — просто люди, 
+        которым не всё равно. Мы любим животных и делаем всё, что можем.
+      </p>
+      <p>
+        Кто-то из нас забирает котёнка домой, кто-то развозит корм по районам, кто-то лечит, кто-то обучает. Каждый делает свой вклад.
+        Вместе мы становимся движением. 
+      </p>
+    </section>
+
+    <section class="fade-in">
+      <h2>Наша философия</h2>
+      <p>
+        Мы не считаем животных вещами. У каждого есть право на любовь и заботу. Мы выступаем за осознанное отношение к питомцам и против жестокости.
+      </p>
+      <p>
+        Мы за доступную стерилизацию, образование детей и помощь тем, кто хочет, но не знает как.
+        Мы не осуждаем — мы поддерживаем. И вместе с тобой — мы можем больше.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Помощь котам</p>
+  </footer>
+
+  <button id="toTop" title="Вернуться вверх">Наверх</button>
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      toTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
